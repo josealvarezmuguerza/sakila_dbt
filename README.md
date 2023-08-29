@@ -15,4 +15,3 @@ Try running the following commands:
 - Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
 
 ### course: https://www.udemy.com/course/get-to-know-dbt-data-build-tool-free-introduction/learn/lecture/29041872#reviews
-#### code based on https://github.com/mbvyn/dbt-project/tree/main/models/dimensions
