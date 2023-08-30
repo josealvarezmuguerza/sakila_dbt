@@ -1,0 +1,15 @@
+sources:
+  - name: stg_source
+    database: sakila_wh
+    schema: stg
+    tables:
+      - name: customer
+      - name: address
+      - name: city
+      - name: country
+      - name: staff
+      - name: store
+      - name: film
+      - name: film_category
+      - name: category
+      - name: language

@@ -1,0 +1,6 @@
+version: 2
+# run with dbt seed --select tag:with_seeds. This file does nothing
+seeds:
+  - name: country_codes
+    config:
+      description: "a country code index"

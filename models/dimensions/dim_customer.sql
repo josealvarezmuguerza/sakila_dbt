@@ -1,23 +1,23 @@
-{{ config(post_hook='insert into {{this}}(customer_id) VALUES (-1)') }}
+{{ config(post_hook='insert into {{this}}(customer_id, first_name) VALUES (-1, \'pepe\')') }}
 
 WITH customer AS (
     SELECT *
-    FROM {{ source('stg', 'customer') }}
+    FROM {{ source('stg_source', 'customer') }}
 ),
 
 address AS (
     SELECT *
-    FROM {{ source('stg', 'address') }}
+    FROM {{ source('stg_source', 'address') }}
 ),
 
 city AS (
     SELECT *
-    FROM {{ source('stg', 'city') }}
+    FROM {{ source('stg_source', 'city') }}
 ),
 
 country AS (
     SELECT * 
-    FROM {{ source('stg', 'country') }}
+    FROM {{ source('stg_source', 'country') }}
 )
 
 SELECT

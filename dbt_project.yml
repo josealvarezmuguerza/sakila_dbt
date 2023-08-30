@@ -33,6 +33,20 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 #schema name definiiton: 
 # generate_schema_name macro > profiles.yml > dbt_project.yml > model file.sql config
+seeds:
+  sakila_dbt:
+
+    +enabled: true
+    +schema: dwh
+    # This configures seeds/country_codes.csv
+    country_codes:
+      +tags: ['with_seeds']
+      post-hook: "delete from {{ this }} where country_code = 'US'"
+      # Override column types
+      +column_types:
+        country_code: varchar(2) # instead of text
+
+
 
 models:
   sakila_dbt:

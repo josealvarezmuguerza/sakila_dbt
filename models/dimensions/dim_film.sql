@@ -3,19 +3,19 @@
 WITH film AS (
     SELECT *,
            '{{ run_started_at.strftime ("%Y-%m-%d %H:%M:%S")}}'::timestamp AS dbt_time 
-    FROM {{ source('stg', 'film') }}
+    FROM {{ source('stg_source', 'film') }}
 ),
 
 film_category AS (
-    SELECT * FROM {{ source('stg', 'film_category') }}
+    SELECT * FROM {{ source('stg_source', 'film_category') }}
 ),
 
 category AS (
-    SELECT * FROM {{ source('stg', 'category') }}
+    SELECT * FROM {{ source('stg_source', 'category') }}
 ),
 
 language AS (
-    SELECT * FROM {{ source('stg', 'language') }}
+    SELECT * FROM {{ source('stg_source', 'language') }}
 )
 
 SELECT
